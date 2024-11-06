@@ -1,3 +1,5 @@
+## Exercise 1
+
 ### Decentralized Version of Monopoly
 
 A decentralized version of monopoly we require a series of programs/accounts (or smart contracts) to store the state of the game
