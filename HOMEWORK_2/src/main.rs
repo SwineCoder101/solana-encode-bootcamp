@@ -1,4 +1,4 @@
-
+use std::collections::HashMap;
 
 pub trait Summary {
     fn summarize(&self) -> String;
@@ -109,4 +109,57 @@ fn main() {
 
 
     iterator_demo();
+
+    let mut scores = HashMap::new();
+
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Yellow"), 50);
+
+    let team_name = String::from("Blue");
+
+    let score = scores.get(&team_name).copied().unwrap_or(10);
+
+    println!("Score: {}", score);
+
+    let matcher = 9;
+
+    match matcher {
+        1 => println!("One"),
+        2 => println!("Two"),
+        3 => println!("Three"),
+        4 => println!("Four"),
+        5 => println!("Five"),
+        6 ..=10 => println!("Six to Ten"),
+        _ => println!("Something else"),
+    }
+
+    let opt_x  = Some(5);
+    let y = 10;
+
+    match opt_x {
+        Some(50) => println!("Got 50"),
+        Some(b) => println!("Matched, y = {:?}", b),
+        _ => println!("Default case, x = {:?}", opt_x),
+    }
+
+    println!("At the end x = {:?}, y={:?}", opt_x, y );
+
+
+    let example_point = Point { x: 0, y: 7 };
+
+    match example_point {
+        Point { x: 0, y } => println!("On the y-axis at {}", y),
+        Point { x, y: 0 } => println!("On the x-axis at {}", x),
+        Point { x, y } => println!("On neither axis at ({}, {})", x, y),
+    }
+
+    let num = Some(4);
+
+    match num {
+        Some(x) if x < 5 => println!("Less than five: {}", x),
+        Some(x) if x % 2 == 0 => println!("Even number: {}", x),
+        Some(x) => println!("{}", x),
+        None => (),
+    }
+
 }
