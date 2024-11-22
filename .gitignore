@@ -1,6 +1,10 @@
-.*/target/
+*/target/
+*/*/target/
+*/*/*/target/
+*/*/*/*/target/
+*/*/node_modules
 
-.*/.*/.*/target/
 
+HOMEWORK_5/SolanaBootcamp/examples_baremetal/target
 
-HOMEWORK_4/target
+*/target

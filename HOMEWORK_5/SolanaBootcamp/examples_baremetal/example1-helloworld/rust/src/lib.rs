@@ -13,5 +13,7 @@ pub fn process_instruction(
 ) -> ProgramResult {
     msg!("[lib] Hello World Rust program entrypoint");
 
+    msg!("Program ID: {:?}", _program_id);
+
     Ok(())
 }
