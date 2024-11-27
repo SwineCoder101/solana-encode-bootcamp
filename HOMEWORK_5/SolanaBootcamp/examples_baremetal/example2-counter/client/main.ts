@@ -51,7 +51,10 @@ async function main() {
   let programID = await checkBinaryExists(PROGRAM_KEYPAIR_PATH);
 
   if (await checkAccountDeployed(connection, programID)) {
-    await deployGreetAccount(programID, connection, payer);
+    // Use an incorrect address for the greeting account
+    let incorrectAddress = new PublicKey("11111111111111111111111111111111");
+    await deployGreetAccount(incorrectAddress, connection, payer);
+    // await deployGreetAccount(programID, connection, payer);
 
     // Print fees used up
     let [endBalanceSol, endBalanceLamport] = await getBalance(

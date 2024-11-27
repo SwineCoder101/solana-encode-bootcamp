@@ -15,5 +15,9 @@ pub fn process_instruction(
 
     msg!("Program ID: {:?}", _program_id);
 
+    // retrieve the total program size
+    let total_size = _instruction_data.len();
+    msg!("Total size: {:?}", total_size);
+
     Ok(())
 }
